@@ -1,0 +1,167 @@
+._wPaint_menu {
+    z-index: 100;
+    margin-top: 155px;
+}
+
+._wPaint_options {
+    float: left;
+}
+
+/*** icons ***/
+._wPaint_icon,
+._wPaint_dropDown
+/*._wPaint_colorPicker */
+{
+    position: relative;
+    float: left;
+    height: 60px;
+    width: 58px;
+    margin: 0;
+    line-height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+
+._wPaint_lineWidth, ._wPaint_fontSize {
+    width: 58px;
+    display: none;
+}
+._wPaint_dropDown select:hover{
+    background-color: #31fdfc;
+}
+
+._wPaint_lineWidth, ._wPaint_fontSize, ._wPaint_fontFamily {
+    overflow: hidden;
+}
+
+._wPaint_dropDown select {
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 75px;
+    height: 60px;
+    padding-left: 18px;
+    font-size: 20px;
+    color: #fff;
+}
+
+._wPaint_dropDown_cover {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 18px;
+    width: 4px;
+    background-color: #EFEFEF;
+}
+
+._wPaint_icon,
+._wPaint_dropDown,
+._wPaint_colorPicker {
+    /*border-color: #999999*/
+}
+
+._wPaint_icon:hover,
+._wPaint_icon.active {
+    background-color: #31fdfc;
+}
+
+/*** handle ***/
+._wPaint_handle {
+    float: left;
+    width: 10px;
+    height: 30px;
+    background: #AFAFAF;
+    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+}
+
+/*** text input ***/
+._wPaint_textInput {
+    position: absolute;
+    border: dotted #0000FF 1px;
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    outline-width: 0;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/*._wPaint_textHolder{position:absolute; border:dotted #0000FF 1px;}*/
+
+/*** color picker overwrites ***/
+._wPaint_colorPicker {
+    padding: 0px;
+    /*width: 58px!important;*/
+    /*height: 60px!important;*/
+}
+._wPaint_colorPicker:hover{
+    background-color: #31fdfc;
+}
+
+._wColorPicker_buttonBorder {
+    border: none;
+}
+
+._wColorPicker_buttonColor {
+    width: 34px!important;
+    height:34px!important;
+    margin-top: 13px;
+    margin-left: 12px;
+    display: none;
+}
+
+._wPaint_colorPicker {
+    float: left;
+}
+
+/*** vertical overwrites ***/
+._wPaint_menu_vertical ._wPaint_icon,
+._wPaint_menu_vertical ._wPaint_dropDown,
+._wPaint_menu_vertical ._wPaint_colorPicker {
+    margin: 0;
+}
+
+._wPaint_menu_vertical ._wPaint_handle {
+    width: 30px;
+    height: 10px;
+    border-radius: 3px 3px 0 0;
+}
+
+/***********************************************************
+ * Images
+ ***********************************************************/
+._wPaint_handle {
+    /*background-image: url('./images/menu_handle.png');*/
+    display: none;
+}
+
+._wPaint_undo {
+    background-image: url('./images/undo_inactive.png');
+    position: absolute;
+    top: 480px;
+}
+
+._wPaint_undo.uactive {
+    background-image: url('./images/undo_inactive.png');
+}
+
+._wPaint_clear {
+    background-image: url('./images/clear.png');
+    position: absolute;
+    top: 720px;
+}
+
+
+._wPaint_pencil {
+    background-image: url('./images/icon_pencil.png');
+}
+
+._wPaint_eraser {
+    background-image: url('./images/icon_eraser.png');
+    position: absolute;
+    top: 120px;
+}

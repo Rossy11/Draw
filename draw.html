@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>乐野绘画板</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="./inc/jquery.1.8.2.min.js"></script>
+    <script type="text/javascript" src="./inc/jquery.ui.core.min.js"></script>
+    <script type="text/javascript" src="./inc/jquery.ui.widget.min.js"></script>
+    <script type="text/javascript" src="./inc/jquery.ui.mouse.min.js"></script>
+    <script type="text/javascript" src="./inc/jquery.ui.draggable.min.js"></script>
+    <!-- wColorPicker -->
+    <link rel="Stylesheet" type="text/css" href="./inc/wColorPicker.css"/>
+    <script type="text/javascript" src="./inc/wColorPicker.js"></script>
+    <!-- wPaint -->
+    <link rel="Stylesheet" type="text/css" href="./wPaint.css"/>
+    <script type="text/javascript" src="./wPaint.js"></script>
+    <script type="text/javascript" src="draw.js"></script>
+</head>
+<body>
+<div class="out">
+    <div class="header">LEYE</div>
+    <div class="left_nav">
+        <div class="full" title="全屏" id="fullScreen"></div>
+        <div class="miss" title="消隐墨水" id="missPen"></div>
+        <div class="green wcolors" id="green" title="绿色">
+            <!--<img src="images/g.png">-->
+        </div>
+        <div class="blue wcolors" id="blue" title="蓝色">
+            <!--<img src="images/b.png">-->
+        </div>
+        <div class="red wcolors" id="red" title="红色">
+            <!--<img src="images/r.png">-->
+        </div>
+        <div class="yellow wcolors" id="yellow" title="黄色">
+            <!--<img src="images/y.png">-->
+        </div>
+        <div class="white wcolors actimg" id="white" title="白色">
+            <!--<img src="images/w.png">-->
+        </div>
+        <a href="javascript:saveImage();" class="saveimg" title="保存"></a>
+        <div class="newpaint" title="新建" id="newpaint"></div>
+        <div class="help" title="帮助" id="help"></div>
+    </div>
+    <div class="content" id="content">
+        <div id="wPaint1" class="draw"></div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="top">
+            <div class="mask" id="topBtn">
+                <div class="maskson">
+                    <!--<img src="images/sl.png">-->
+                </div>
+            </div>
+        </div>
+        <div class="bottom" id="bottom">
+            <div id="w1" class="imgs actSelect"></div>
+        </div>
+    </div>
+</div>
+
+<!--分屏-->
+<div class="splitScreen" id="splitScreen">
+    <!--二分屏-->
+    <div class="s twoScreen">
+        <div class="two t1">
+            <div class="tip">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="two t2">
+            <div class="tip">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!--三分屏-->
+    <div class="s threeScreen">
+        <div class="three th1" style="margin-left: 25%">
+            <div class="tip">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="three th2">
+            <div class="tip2">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="three th3">
+            <div class="tip2">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <!--四分屏-->
+    <div class="s fourScreen">
+        <div class="four f1">
+            <div class="tip">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="four f2">
+            <div class="tip">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="four f3">
+            <div class="tip2">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+        <div class="four f4">
+            <div class="tip2">
+                <div class="close"><img src="images/gb.png" alt=""></div>
+                <div class="min"><img src="images/sx.png" alt=""></div>
+                <div class="max"><img src="images/quan.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var wp = $("#wPaint1").wPaint({
+        imageBg: "images/bbb.png"
+    }).data('_wPaint');
+    var Wth = $(window).width();
+    var screenWidth = Wth - 60;
+    $("#splitScreen").width(screenWidth);
+    window.onresize = function () {
+        var Wth = $(window).width();
+        var screenWidth = Wth - 60;
+        $("#splitScreen").width(screenWidth);
+    }
+</script>
+</body>
+</html>

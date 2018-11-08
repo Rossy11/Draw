@@ -1,0 +1,339 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.out{
+    width:100%;
+    min-height:100%;
+    position: relative;
+}
+.header{
+    width:100%;
+    height: 40px;
+    background: #111111;
+    color: #fff;
+    line-height: 40px;
+    padding-left: 10px;
+    z-index: 100;
+    position: absolute;
+    top:0;
+    left:0;
+
+}
+.left_nav{
+    width: 60px;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-right: 2px solid #fff;
+    background: #111111;
+    z-index: 99;
+}
+
+.left_nav a:hover{
+    background-color: #31fdfc;
+}
+.activeZ{
+    background-color: #31fdfc;
+}
+.full{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 95px;
+    background-image: url("images/qp.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.full:hover{
+    background-color: #31fdfc;
+}
+.miss{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 215px;
+    background-image: url("images/missp.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.miss:hover{
+    background-color: #31fdfc;
+}
+.green{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 335px;
+}
+.blue{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 395px;
+}
+.red{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 455px;
+}
+.yellow{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 515px;
+}
+.white{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 575px;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.actimg{
+    background: url("images/actimg.png") center no-repeat;
+}
+
+.saveimg{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 695px;
+    background-image: url("images/camera.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.saveimg:hover{
+    background-color: #31fdfc;
+}
+.newpaint{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 755px;
+    background-image: url("images/tj.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.newpaint:hover{
+    background-color: #31fdfc;
+}
+.help{
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    top: 815px;
+    background-image: url("images/help.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-bottom: 2px solid #ffffff;
+}
+.help:hover{
+    background-color: #31fdfc;
+}
+
+.content{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.draw{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.footer{
+    width:100%;
+    height: 220px;
+    position: fixed;
+    left:0;
+    bottom: -190px;
+    transition: all 0.5s ease 0s;
+    z-index: 98;
+}
+.top{
+    height: 30px;
+    width:100%;
+    position: relative;
+}
+.mask{
+    width:210px;
+    height:0;
+    border-width:0 20px 30px 20px;
+    border-style:none solid solid;
+    border-color:transparent transparent #111111;
+    opacity: 0.8;
+    margin-left: 860px;
+    cursor: pointer;
+}
+.maskson{
+    width: 210px;
+    height: 30px;
+    margin-left: -20px;
+    background: url("images/sl.png") center no-repeat;
+}
+.bottom{
+    height: 190px;
+    background: #111111;
+    opacity: 0.8;
+    padding-left: 83px;
+    padding-top: 10px;
+    overflow: auto;
+}
+.imgs{
+    width: 227px;
+    height: 130px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border:1px #fff solid;
+    position: relative;
+}
+.actSelect{
+    border:1px #31fdfc solid;
+}
+.smallcamera{
+    position: absolute;
+    right:0;
+    bottom:0;
+}
+
+/************分屏*****************/
+.splitScreen{
+    min-height:100%;
+    position: fixed;
+    top:0;
+    left: 60px;
+    background: #666;
+    display: none;
+}
+.twoScreen{
+    height:50%;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:20%;
+    display: none;
+}
+.two{
+    height:100%;
+    width:50%;
+    border:1px #555555 solid;
+    float: left;
+    position: relative;
+}
+.tip{
+    width:100%;
+    height: 45px;
+    background: #1b1b1b;
+    position: absolute;
+    bottom:0;
+    line-height: 50px;
+}
+.tip div{
+    width: 45px;
+    height: 45px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
+.tip2{
+    width:100%;
+    height: 45px;
+    background: #1b1b1b;
+    position: absolute;
+    top:0;
+    line-height: 50px;
+}
+.tip2 div{
+    width: 45px;
+    height: 45px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
+.threeScreen{
+    height:100%;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    display: none;
+}
+.three{
+    height:50%;
+    width:50%;
+    border:1px #555555 solid;
+    float: left;
+    position: relative;
+}
+.fourScreen{
+    height:100%;
+    width:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    display: none;
+}
+.four{
+    height:50%;
+    width:50%;
+    border:1px #555555 solid;
+    float: left;
+    position: relative;
+}
+
+._wColorPicker_paletteHolder{
+    position: absolute;
+    top: 180px;
+    left: -60px;
+}
+#_wColorPicker_color_7,#_wColorPicker_color_6{
+    display: none;
+}
+
+._wColorPicker_color_1{
+    margin-top: 10px;
+    margin-left: 11px;
+}
+._wColorPicker_color_2,._wColorPicker_color_3,._wColorPicker_color_4{
+    margin-top: 30px;
+    margin-left: 11px;
+}
+._wColorPicker_color_5{
+    margin-top: 29px;
+    margin-left: 11px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
